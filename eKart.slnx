@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/BackendServices/" />
+  <Folder Name="/BackendServices/UsersService/">
+    <Project Path="BackendServices/UsersService/Users.API/Users.API.csproj" />
+    <Project Path="BackendServices/UsersService/Users.Core/Users.Core.csproj" />
+    <Project Path="BackendServices/UsersService/Users.Infrastructure/Users.Infrastructure.csproj" />
+  </Folder>
+</Solution>

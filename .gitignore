@@ -1,0 +1,26 @@
+## Visual Studio / VS Code
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+*.sln.docstates
+
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.useroptions
+*.DotSettings.user
+
+## OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
