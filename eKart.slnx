@@ -1,5 +1,13 @@
 <Solution>
+  <Folder Name="/ApiGateway/">
+    <Project Path="ApiGateway/Ocelot.ApiGateway/Ocelot.ApiGateway.csproj" Id="e7c7454e-9971-4fb0-8ecc-9850399df563" />
+  </Folder>
   <Folder Name="/BackendServices/" />
+  <Folder Name="/BackendServices/ProductsService/">
+    <Project Path="BackendServices/ProductsService/Products.API/Products.API.csproj" Id="b8427fe5-59fe-45f2-b9b1-efac0ae6ef0b" />
+    <Project Path="BackendServices/ProductsService/Products.BLL/Products.BLL.csproj" Id="7bfad9ae-9184-4eb4-89de-bc0785a2e5a5" />
+    <Project Path="BackendServices/ProductsService/Products.DAL/Products.DAL.csproj" Id="dbb14bd0-3da6-4892-9733-71ea9f8c61a5" />
+  </Folder>
   <Folder Name="/BackendServices/UsersService/">
     <Project Path="BackendServices/UsersService/Users.API/Users.API.csproj" />
     <Project Path="BackendServices/UsersService/Users.Core/Users.Core.csproj" />

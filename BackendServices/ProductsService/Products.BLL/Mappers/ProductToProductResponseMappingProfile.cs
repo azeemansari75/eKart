@@ -1,0 +1,19 @@
+﻿using AutoMapper;
+using Products.BLL.DTOs;
+using Products.DAL.Entities;
+
+namespace Products.BLL.Mappers;
+
+public class ProductToProductResponseMappingProfile : Profile
+{
+    public ProductToProductResponseMappingProfile()
+    {
+        CreateMap<Product, ProductResponse>()
+           .ForMember(dest => dest.ProductID, opt => opt.MapFrom(src => src.ProductID))
+           .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.ProductName))
+           .ForMember(dest => dest.QuantityInStock, opt => opt.MapFrom(src => src.QuantityInStock))
+           .ForMember(dest => dest.UnitPrice, opt => opt.MapFrom(src => src.UnitPrice))
+           .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
+           .ReverseMap();
+    }
+}

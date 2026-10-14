@@ -19,8 +19,14 @@ public class UsersService : IUsersService
 
     public async Task<AuthenticationResponse?> Register(RegisterRequest registerRequest)
     {
+        //Check if email already exist
+
+
         //Map Entity to DTO
         var user = _mapper.Map<ApplicationUser>(registerRequest);
+
+        //Generating password Hash
+        user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password);
 
         //Code for add in DB
         var createdUser = await _userRepository.AddUser(user);
@@ -38,6 +44,18 @@ public class UsersService : IUsersService
             return null;
         }
 
+        //Verifying password Hash
+        bool verfifyPassword = BCrypt.Net.BCrypt.Verify(loginRequest.Password, login.PasswordHash);
+        if(!verfifyPassword)
+        {
+            return null;
+        }
+
         return _mapper.Map<AuthenticationResponse>(login) with { Token = "" , Success = true};
+    }
+
+    public async Task<bool> Delete(Guid id)
+    {
+        return await _userRepository.DeleteUser(id);
     }
 }

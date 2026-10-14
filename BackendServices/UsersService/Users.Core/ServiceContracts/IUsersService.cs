@@ -8,4 +8,6 @@ public interface IUsersService
 
     Task<AuthenticationResponse?> Register(RegisterRequest registerRequest);
 
+    Task<bool> Delete(Guid guid);
+
 }
