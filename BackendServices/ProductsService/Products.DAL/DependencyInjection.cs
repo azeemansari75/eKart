@@ -11,11 +11,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddDataAccessLayer(this IServiceCollection services, IConfiguration configuration)
     {
-        string connectionString = configuration.GetConnectionString("DefaultConnection")!;
+        string connectionString = configuration.GetConnectionString("DbConnection")!;
 
         services.AddDbContext<ApplicationDbContext>(option =>
         {
-            option.UseMySQL(connectionString);
+            option.UseSqlServer(connectionString);
         });
 
         services.AddScoped<IProductRepository, ProductRepository>();

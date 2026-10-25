@@ -3,6 +3,11 @@
     <Project Path="ApiGateway/Ocelot.ApiGateway/Ocelot.ApiGateway.csproj" Id="e7c7454e-9971-4fb0-8ecc-9850399df563" />
   </Folder>
   <Folder Name="/BackendServices/" />
+  <Folder Name="/BackendServices/OrdersService/">
+    <Project Path="BackendServices/OrdersService/Orders.API/Orders.API.csproj" Id="3e73c1e7-656c-4827-beb8-c7c1488619ae" />
+    <Project Path="BackendServices/OrdersService/Orders.BLL/Orders.BLL.csproj" Id="5241a9c6-6dc9-4270-8fbe-165e85ea84df" />
+    <Project Path="BackendServices/OrdersService/Orders.DAL/Orders.DAL.csproj" Id="524ecd54-f53f-41df-80bb-146ce0566f5b" />
+  </Folder>
   <Folder Name="/BackendServices/ProductsService/">
     <Project Path="BackendServices/ProductsService/Products.API/Products.API.csproj" Id="b8427fe5-59fe-45f2-b9b1-efac0ae6ef0b" />
     <Project Path="BackendServices/ProductsService/Products.BLL/Products.BLL.csproj" Id="7bfad9ae-9184-4eb4-89de-bc0785a2e5a5" />

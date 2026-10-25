@@ -84,7 +84,7 @@ public class ProductService : IProductService
         }
 
         Product? existingProduct = await _productRepository.GetProductByCondition(p => p.ProductID == productID);
-        if(existingProduct != null)
+        if(existingProduct is null)
         {
             throw new ArgumentNullException("Product Not Found");
         }
@@ -117,13 +117,14 @@ public class ProductService : IProductService
 
     public async Task<List<ProductResponse?>> GetProductsByCondition(Expression<Func<Product, bool>> conditionExpression)
     {
-        IEnumerable<Product> products = await _productRepository.GetProductsByCondition(conditionExpression);
-        if(products == null || !products.Any())
+        IEnumerable<Product?> products = await _productRepository.GetProductsByCondition(conditionExpression);
+        if(products is null)
         {
-            throw new ArgumentNullException("No products found.");
+            return null;
         }
 
-        return _mapper.Map<List<ProductResponse?>>(products);
+        // Kuch nahi mila to exception nahi, khaali list return karo
+        return _mapper.Map<List<ProductResponse?>>(products ?? Enumerable.Empty<Product?>());
     }
 
 }
