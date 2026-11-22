@@ -1,0 +1,20 @@
+﻿using Orders.BLL.DTOs;
+using Orders.DAL.Entities;
+using System.Linq.Expressions;
+
+namespace Orders.BLL.ServiceContracts;
+
+public interface IOrderService
+{
+    Task<List<OrderResponse?>> GetOrders();
+
+    Task<List<OrderResponse?>> GetOrdersByCondition(Expression<Func<Order, bool>> condition);
+
+    Task<OrderResponse?> GetOrderByCondition(Expression<Func<Order, bool>> condition);
+
+    Task<OrderResponse?> AddOrder(OrderAddRequest orderAddRequest);
+
+    Task<OrderResponse?> UpdateOrder(OrderUpdateRequest orderUpdateRequest);
+
+    Task<bool> DeleteOrder(Guid orderID);
+}
