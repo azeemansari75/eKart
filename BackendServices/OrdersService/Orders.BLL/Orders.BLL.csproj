@@ -14,5 +14,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Orders.DAL\Orders.DAL.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mappers\" />
+    <Folder Include="Validators\" />
+    <Folder Include="Services\" />
+    <Folder Include="ServiceContracts\" />
+  </ItemGroup>
 
 </Project>
