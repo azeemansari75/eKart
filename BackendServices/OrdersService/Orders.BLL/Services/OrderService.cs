@@ -1,5 +1,6 @@
 ﻿ using AutoMapper;
 using FluentValidation;
+using FluentValidation.Results;
 using Orders.BLL.DTOs;
 using Orders.BLL.ServiceContracts;
 using Orders.DAL.Entities;
@@ -27,8 +28,8 @@ public class OrderService : IOrderService
                         IValidator<OrderAddRequest> orderAddRequestValidator,
                         IValidator<OrderItemAddRequest> orderItemAddRequestValidator,
                         IValidator<OrderUpdateRequest> orderUpdateRequestValidator,
-                        IValidator<OrderItemUpdateRequest> orderItemUpdateRequestValidator
-,
+                        IValidator<OrderItemUpdateRequest> orderItemUpdateRequestValidator,
+
                         UsersServiceClient usersServiceClient)
 
     {
