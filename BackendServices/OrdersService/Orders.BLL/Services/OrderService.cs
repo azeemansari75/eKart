@@ -2,6 +2,7 @@
 using FluentValidation;
 using FluentValidation.Results;
 using Orders.BLL.DTOs;
+using Orders.BLL.HttpClientHelper;
 using Orders.BLL.ServiceContracts;
 using Orders.DAL.Entities;
 using Orders.DAL.RepositoryContracts;
