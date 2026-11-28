@@ -4,11 +4,18 @@ using Orders.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Dependency Injection
 builder.Services.AddBusinessLogicLayer(builder.Configuration);
 builder.Services.AddDataAccessLayer(builder.Configuration);
 
+// Controllers
 builder.Services.AddControllers();
 
+// Swagger
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policyBuilder =>
@@ -22,18 +29,25 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+// Exception Handling
 app.UseExceptionHandlingMiddleware();
+
+// Swagger
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
 app.UseRouting();
 
+// CORS
 app.UseCors("AllowFrontend");
 
+// Authentication & Authorization
 app.UseAuthentication();
-
 app.UseAuthorization();
 
+// Map Controllers
 app.MapControllers();
 
 app.Run();
